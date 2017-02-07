@@ -8,3 +8,6 @@
 	
 -> 02/06/2017 (branch: feature_verify_input_string)
 	- added change_log.txt, rmn_calc.c, rmn_calc.h, test_rmn_calc.c, and test_rmn_calc.h to project
+	- edited Makefile to include necessary files (rmn_calc.c, test_rmn_calc.c)
+	- verified regex works for case insensitivity
+	- verified regex matches for 0 - 3 'i' characters and fails if there are more

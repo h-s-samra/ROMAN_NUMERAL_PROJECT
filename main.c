@@ -2,6 +2,7 @@
 //
 // 02/04/2017	HSamra	Initial Commit
 // 02/06/2017	HSamra	Added functionality for displaying version number on startup
+// 02/06/2017	HSamra	Adding functionality for string verification testing
 //
 // -------------------------------------------------
 
@@ -35,10 +36,22 @@ byte _read_buildNum(char *str)
 
 int main(void)
 {
+	// initialize regex
+	if(!RMN_init())
+	{
+		return 0;
+	}
+	
 	if(!_read_buildNum(vrsn_bld))
 	{
 		return 0;
 	}
+	
+#ifdef RMN_CALC_TEST
+	TEST_rmn_calc_test();
+#else
+	
+#endif // RMN_CALC_TEST
 	
 	
 	return 0;
