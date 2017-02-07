@@ -65,7 +65,25 @@ void _regex_verifyX_fail(char *str)
 	printf("PASS\r\n");
 }
 
-void _regex_verifyMulti_VI_pass(char *str)
+void _regex_verifyL_pass(char *str)
+{
+	printf("Test_regex_verifyL_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifyL_fail(char *str)
+{
+	printf("Test_regex_verifyL_fail(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 0);
+	
+	printf("PASS\r\n");
+}
+
+/*void _regex_verifyMulti_VI_pass(char *str)
 {
 	printf("Test_regex_verifyMulti_VI_pass(%s): ", str);
 	
@@ -81,7 +99,7 @@ void _regex_verifyMulti_VI_fail(char *str)
 	assert(RMN_verify_string(str) == 0);
 	
 	printf("PASS\r\n");
-}
+}*/
 
 void TEST_rmn_calc_test(void)
 {
@@ -101,11 +119,16 @@ void TEST_rmn_calc_test(void)
 	_regex_verifyX_pass("xxx");
 	_regex_verifyX_fail("xxxx");
 	
-	_regex_verifyMulti_VI_pass("vi");
-	_regex_verifyMulti_VI_pass("vii");
-	_regex_verifyMulti_VI_pass("viii");
-	_regex_verifyMulti_VI_fail("viiii");
-	_regex_verifyMulti_VI_fail("vviii");
-	_regex_verifyMulti_VI_fail("vviv");
+	_regex_verifyL_pass("L");
+	_regex_verifyL_pass("l");
+	_regex_verifyL_fail("ll");
+
+// HSS_Debug: will tackle combinations once singles are done	
+//	_regex_verifyMulti_VI_pass("vi");
+//	_regex_verifyMulti_VI_pass("vii");
+//	_regex_verifyMulti_VI_pass("viii");
+//	_regex_verifyMulti_VI_fail("viiii");
+//	_regex_verifyMulti_VI_fail("vviii");
+//	_regex_verifyMulti_VI_fail("vviv");
 		
 }

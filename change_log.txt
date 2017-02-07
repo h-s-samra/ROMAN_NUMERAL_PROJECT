@@ -17,4 +17,5 @@
 -> 02/07/2017 (branch: feature_verify_input_string)
 	- removed file path variable from inc_bld_str.sh since it will be different on client machines
 	- verified regex matches for 0 - 3 'x' characters and fails if there are more
+	- verified regex matches for 0 - 1 'l' characters and fails if there are more
 	

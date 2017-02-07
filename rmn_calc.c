@@ -10,7 +10,7 @@
 #include <ctype.h>
 #include "common.h"
 
-char rgx_str[] = {"^(x{0,3})(v?)(i{0,3})$"};
+char rgx_str[] = {"^(l?)(x{0,3})(v?)(i{0,3})$"};
 
 regex_t regex;
 byte rgxSts = 0;
