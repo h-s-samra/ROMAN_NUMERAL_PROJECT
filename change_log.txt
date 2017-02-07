@@ -19,4 +19,5 @@
 	- verified regex matches for 0 - 3 'x' characters and fails if there are more
 	- verified regex matches for 0 - 1 'l' characters and fails if there are more
 	- verified regex matches for 0 - 3 'c' characters and fails if there are more
+	- verified regex matches for 0 - 1 'd' characters and fails if there are more
 	
