@@ -11,3 +11,5 @@
 	- edited Makefile to include necessary files (rmn_calc.c, test_rmn_calc.c)
 	- verified regex works for case insensitivity
 	- verified regex matches for 0 - 3 'i' characters and fails if there are more
+	- verified regex matches for 0 - 1 'v' characters and fails if there are more
+	- verified regex matches for 'vi' character combination and fails if 'v' comes after 'i' ('viv')
