@@ -22,3 +22,4 @@
 	- verified regex matches for 0 - 1 'd' characters and fails if there are more
 	- verified regex matches for 0 - n 'm' characters
 	- verified regex matches edge conditions for 'v' 'i' combinations and 'x' 'i' combinations
+	- verified regex matches edge conditions for 'iv' using edge conditions

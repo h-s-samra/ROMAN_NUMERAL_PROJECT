@@ -164,8 +164,63 @@ void _regex_verifyMulti_XI_fail(char *str)
 	printf("PASS\r\n");
 }
 
+void _regex_verifyMulti_XV_pass(char *str)
+{
+	printf("Test_regex_verifyMulti_XV_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifyMulti_XV_fail(char *str)
+{
+	printf("Test_regex_verifyMulti_XV_fail(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 0);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifyMulti_all_pass(char *str)
+{
+	printf("Test_regex_verifyMulti_all_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifyMulti_all_fail(char *str)
+{
+	printf("Test_regex_verifyMulti_all_fail(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 0);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifySubTrm_IV_pass(char *str)
+{
+	printf("Test_regex_verifyMulti_all_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifySubTrm_IV_fail(char *str)
+{
+	printf("Test_regex_verifyMulti_all_fail(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 0);
+	
+	printf("PASS\r\n");
+}
+
 void TEST_rmn_calc_test(void)
 {
+	// test conditions for each character
 	_regex_verifyI_pass("I");
 	_regex_verifyI_pass("i");
 	_regex_verifyI_pass("ii");
@@ -209,5 +264,19 @@ void TEST_rmn_calc_test(void)
 	_regex_verifyMulti_XI_pass("xxxiii");
 	_regex_verifyMulti_XI_fail("xiiii");
 	_regex_verifyMulti_XI_fail("xxxxi");
+	
+	_regex_verifyMulti_XV_pass("xv");
+	_regex_verifyMulti_XV_pass("xxxv");
+	_regex_verifyMulti_XV_fail("xvv");
+	_regex_verifyMulti_XV_fail("xxxxv");
+	
+	_regex_verifyMulti_all_pass("mdclxvi");
+	_regex_verifyMulti_all_fail("mcdivxl");
+	
+	// test conditions for subtractive terms (iv, ix, xl, xc, cd, cm)
+	_regex_verifySubTrm_IV_pass("iv");
+	_regex_verifySubTrm_IV_fail("iiv");
+	_regex_verifySubTrm_IV_fail("ivi");
+	
 		
 }
