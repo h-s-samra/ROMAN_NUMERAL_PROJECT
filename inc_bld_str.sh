@@ -7,17 +7,15 @@
 # --------------------------------------------------
 
 #variables:
-PATH="/home/hsamra/c_devel/ROMAN_NUMERAL_PROJECT/"
 FILE="bld_num.txt"
 NUM=9999 # default value (should never reach this)
 STR=""
 
 #code:
 #-look for file.  If not found then create it
-if [ ! -e $PATH$FILE ]
+if [ ! -e $FILE ]
 then
 	echo creating file...
-	cd $PATH
 	> $FILE
 fi
 

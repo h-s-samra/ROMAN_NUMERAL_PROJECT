@@ -47,6 +47,24 @@ void _regex_verifyV_fail(char *str)
 	printf("PASS\r\n");
 }
 
+void _regex_verifyX_pass(char *str)
+{
+	printf("Test_regex_verifyX_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifyX_fail(char *str)
+{
+	printf("Test_regex_verifyX_fail(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 0);
+	
+	printf("PASS\r\n");
+}
+
 void _regex_verifyMulti_VI_pass(char *str)
 {
 	printf("Test_regex_verifyMulti_VI_pass(%s): ", str);
@@ -77,13 +95,17 @@ void TEST_rmn_calc_test(void)
 	_regex_verifyV_pass("v");
 	_regex_verifyV_fail("vv");
 	
+	_regex_verifyX_pass("X");
+	_regex_verifyX_pass("x");
+	_regex_verifyX_pass("xx");
+	_regex_verifyX_pass("xxx");
+	_regex_verifyX_fail("xxxx");
+	
 	_regex_verifyMulti_VI_pass("vi");
 	_regex_verifyMulti_VI_pass("vii");
 	_regex_verifyMulti_VI_pass("viii");
 	_regex_verifyMulti_VI_fail("viiii");
 	_regex_verifyMulti_VI_fail("vviii");
 	_regex_verifyMulti_VI_fail("vviv");
-	
 		
-	
 }

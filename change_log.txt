@@ -13,3 +13,8 @@
 	- verified regex matches for 0 - 3 'i' characters and fails if there are more
 	- verified regex matches for 0 - 1 'v' characters and fails if there are more
 	- verified regex matches for 'vi' character combination and fails if 'v' comes after 'i' ('viv')
+	
+-> 02/07/2017 (branch: feature_verify_input_string)
+	- removed file path variable from inc_bld_str.sh since it will be different on client machines
+	- verified regex matches for 0 - 3 'x' characters and fails if there are more
+	
