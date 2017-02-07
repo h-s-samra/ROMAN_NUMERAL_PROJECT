@@ -118,6 +118,17 @@ void _regex_verifyD_fail(char *str)
 	
 	printf("PASS\r\n");
 }
+
+void _regex_verifyM_pass(char *str)
+{
+	printf("Test_regex_verifyM_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+
 /*void _regex_verifyMulti_VI_pass(char *str)
 {
 	printf("Test_regex_verifyMulti_VI_pass(%s): ", str);
@@ -167,6 +178,10 @@ void TEST_rmn_calc_test(void)
 	_regex_verifyD_pass("D");
 	_regex_verifyD_pass("d");
 	_regex_verifyD_fail("dd");
+	
+	_regex_verifyM_pass("M");
+	_regex_verifyM_pass("m");
+	_regex_verifyM_pass("mmmmmm");
 	
 // HSS_Debug: will tackle combinations once singles are done	
 //	_regex_verifyMulti_VI_pass("vi");
