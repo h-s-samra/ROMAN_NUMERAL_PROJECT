@@ -202,7 +202,7 @@ void _regex_verifyMulti_all_fail(char *str)
 
 void _regex_verifySubTrm_IV_pass(char *str)
 {
-	printf("Test_regex_verifyMulti_all_pass(%s): ", str);
+	printf("Test_regex_verifySubTerm_IV_pass(%s): ", str);
 	
 	assert(RMN_verify_string(str) == 1);
 	
@@ -211,7 +211,25 @@ void _regex_verifySubTrm_IV_pass(char *str)
 
 void _regex_verifySubTrm_IV_fail(char *str)
 {
-	printf("Test_regex_verifyMulti_all_fail(%s): ", str);
+	printf("Test_regex_verifySubTrm_IV_fail(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 0);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifySubTrm_IX_pass(char *str)
+{
+	printf("Test_regex_verifySubTrm_IX_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifySubTrm_IX_fail(char *str)
+{
+	printf("Test_regex_verifySubTrm_IX_fail(%s): ", str);
 	
 	assert(RMN_verify_string(str) == 0);
 	
@@ -277,6 +295,10 @@ void TEST_rmn_calc_test(void)
 	_regex_verifySubTrm_IV_pass("iv");
 	_regex_verifySubTrm_IV_fail("iiv");
 	_regex_verifySubTrm_IV_fail("ivi");
+	_regex_verifySubTrm_IV_fail("viv");
 	
-		
+	_regex_verifySubTrm_IX_pass("ix");
+	_regex_verifySubTrm_IX_pass("xix");
+	_regex_verifySubTrm_IX_fail("iix");
+	_regex_verifySubTrm_IX_fail("ixi");
 }
