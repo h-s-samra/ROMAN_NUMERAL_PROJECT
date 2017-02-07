@@ -21,4 +21,4 @@
 	- verified regex matches for 0 - 3 'c' characters and fails if there are more
 	- verified regex matches for 0 - 1 'd' characters and fails if there are more
 	- verified regex matches for 0 - n 'm' characters
-	
+	- verified regex matches edge conditions for 'v' 'i' combinations and 'x' 'i' combinations
