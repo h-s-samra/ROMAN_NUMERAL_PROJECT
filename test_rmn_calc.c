@@ -236,6 +236,24 @@ void _regex_verifySubTrm_IX_fail(char *str)
 	printf("PASS\r\n");
 }
 
+void _regex_verifySubTrm_XL_pass(char *str)
+{
+	printf("Test_regex_verifySubTrm_XL_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifySubTrm_XL_fail(char *str)
+{
+	printf("Test_regex_verifySubTrm_XL_fail(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 0);
+	
+	printf("PASS\r\n");
+}
+
 void TEST_rmn_calc_test(void)
 {
 	// test conditions for each character
@@ -301,4 +319,11 @@ void TEST_rmn_calc_test(void)
 	_regex_verifySubTrm_IX_pass("xix");
 	_regex_verifySubTrm_IX_fail("iix");
 	_regex_verifySubTrm_IX_fail("ixi");
+	_regex_verifySubTrm_IX_fail("ixiv");
+	
+	_regex_verifySubTrm_XL_pass("xl");
+	_regex_verifySubTrm_XL_pass("xlix");
+	_regex_verifySubTrm_XL_pass("cxl");
+	_regex_verifySubTrm_XL_fail("xlx");
+	_regex_verifySubTrm_XL_fail("xli");
 }
