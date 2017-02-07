@@ -1,12 +1,13 @@
 // --------------- main.c Log --------------------
 //
 // 02/04/2017	HSamra	Initial Commit
+// 02/06/2017	HSamra	Added functionality for displaying version number on startup
 //
 // -------------------------------------------------
 
-#include <stdio.h>
 #include <string.h>
 #include "common.h"
+#include "test_rmn_calc.h"
 
 const char filename[] = {"bld_num.txt"};
 byte vrsn_mjr = 0x01;

@@ -1,0 +1,10 @@
+***** CHANGELOG *****
+
+-> 02/06/2017 (branch: feature_add_version_incrementation)
+	- added main.c, common.h, inc_bld_str.sh, Makefile, and bld_num.txt to project
+	- added feature to increment build number everytime code is compiled
+	- added feature to main.c to display software version number when started
+	- deleted "feature_add_version_incrementation" branch after merging it to "develop" branch
+	
+-> 02/06/2017 (branch: feature_verify_input_string)
+	- added change_log.txt, rmn_calc.c, rmn_calc.h, test_rmn_calc.c, and test_rmn_calc.h to project
