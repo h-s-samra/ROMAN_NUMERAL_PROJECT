@@ -33,3 +33,6 @@
 	- merging this branch back into develop in order to work on the next feature:
 		- converting integers into roman numerals
 		- this will allow for full testing of string verification in the long run
+
+-> 02/08/2017 (branch: feature_encode_int_to_roman_numeral)
+	- created a new branch in order to take an integer and create a roman numeral string
