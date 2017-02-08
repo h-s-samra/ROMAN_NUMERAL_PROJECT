@@ -10,7 +10,7 @@
 #include <ctype.h>
 #include "common.h"
 
-char rgx_str[] = {"^((m*)((cd?)|(d?)(c{0,3}))((xc?)|((xl?)|(l?)(x{0,3})))((ix?)|((iv?)|(v?)(i{0,3}))))$"};
+char rgx_str[] = {"^((m*)((cm?)|((cd?)|(d?)(c{0,3})))((xc?)|((xl?)|(l?)(x{0,3})))((ix?)|((iv?)|(v?)(i{0,3}))))$"};
 
 regex_t regex;
 byte rgxSts = 0;

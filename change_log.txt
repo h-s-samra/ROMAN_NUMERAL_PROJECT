@@ -29,3 +29,4 @@
 	- verified regex matches edge conditions for 'xl'
 	- verified regex matches edge conditions for 'xc'
 	- verified regex matches edge conditions for 'cd'
+	- verified regex matches edge conditions for 'cm'
