@@ -30,3 +30,6 @@
 	- verified regex matches edge conditions for 'xc'
 	- verified regex matches edge conditions for 'cd'
 	- verified regex matches edge conditions for 'cm'
+	- merging this branch back into develop in order to work on the next feature:
+		- converting integers into roman numerals
+		- this will allow for full testing of string verification in the long run
