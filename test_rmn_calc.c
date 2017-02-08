@@ -272,6 +272,24 @@ void _regex_verifySubTrm_XC_fail(char *str)
 	printf("PASS\r\n");
 }
 
+void _regex_verifySubTrm_CD_pass(char *str)
+{
+	printf("Test_regex_verifySubTrm_CD_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifySubTrm_CD_fail(char *str)
+{
+	printf("Test_regex_verifySubTrm_CD_fail(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 0);
+	
+	printf("PASS\r\n");
+}
+
 void TEST_rmn_calc_test(void)
 {
 	// test conditions for each character
@@ -354,4 +372,14 @@ void TEST_rmn_calc_test(void)
 	_regex_verifySubTrm_XC_fail("xcx");
 	_regex_verifySubTrm_XC_fail("xcxl");
 	_regex_verifySubTrm_XC_fail("xcl");
+	
+	_regex_verifySubTrm_CD_pass("cd");
+	_regex_verifySubTrm_CD_pass("cdxl");
+	_regex_verifySubTrm_CD_pass("cdxc");
+	_regex_verifySubTrm_CD_pass("cdi");
+	_regex_verifySubTrm_CD_pass("cdv");
+	_regex_verifySubTrm_CD_pass("cdx");
+	_regex_verifySubTrm_CD_fail("cdc");
+	_regex_verifySubTrm_CD_fail("dcd");
+	
 }
