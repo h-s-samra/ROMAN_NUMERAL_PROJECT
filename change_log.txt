@@ -27,3 +27,4 @@
 
 -> 02/08/2017 (branch: feature_verify_input_string)
 	- verified regex matches edge conditions for 'xl'
+	- verified regex matches edge conditions for 'xc'

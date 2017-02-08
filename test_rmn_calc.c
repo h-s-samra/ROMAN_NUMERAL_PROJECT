@@ -254,6 +254,24 @@ void _regex_verifySubTrm_XL_fail(char *str)
 	printf("PASS\r\n");
 }
 
+void _regex_verifySubTrm_XC_pass(char *str)
+{
+	printf("Test_regex_verifySubTrm_XC_pass(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+void _regex_verifySubTrm_XC_fail(char *str)
+{
+	printf("Test_regex_verifySubTrm_XC_fail(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 0);
+	
+	printf("PASS\r\n");
+}
+
 void TEST_rmn_calc_test(void)
 {
 	// test conditions for each character
@@ -311,19 +329,29 @@ void TEST_rmn_calc_test(void)
 	
 	// test conditions for subtractive terms (iv, ix, xl, xc, cd, cm)
 	_regex_verifySubTrm_IV_pass("iv");
-	_regex_verifySubTrm_IV_fail("iiv");
 	_regex_verifySubTrm_IV_fail("ivi");
+	_regex_verifySubTrm_IV_fail("ivv");
 	_regex_verifySubTrm_IV_fail("viv");
 	
 	_regex_verifySubTrm_IX_pass("ix");
 	_regex_verifySubTrm_IX_pass("xix");
-	_regex_verifySubTrm_IX_fail("iix");
 	_regex_verifySubTrm_IX_fail("ixi");
 	_regex_verifySubTrm_IX_fail("ixiv");
+	_regex_verifySubTrm_IX_fail("ixv");
 	
 	_regex_verifySubTrm_XL_pass("xl");
 	_regex_verifySubTrm_XL_pass("xli");
 	_regex_verifySubTrm_XL_pass("xlix");
 	_regex_verifySubTrm_XL_pass("cxl");
 	_regex_verifySubTrm_XL_fail("xlx");
+	_regex_verifySubTrm_XL_fail("xll");
+	
+	_regex_verifySubTrm_XC_pass("xc");
+	_regex_verifySubTrm_XC_pass("cxc");
+	_regex_verifySubTrm_XC_pass("xcix");
+	_regex_verifySubTrm_XC_pass("xcvi");
+	_regex_verifySubTrm_XC_pass("xciv");
+	_regex_verifySubTrm_XC_fail("xcx");
+	_regex_verifySubTrm_XC_fail("xcxl");
+	_regex_verifySubTrm_XC_fail("xcl");
 }
