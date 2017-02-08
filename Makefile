@@ -34,3 +34,7 @@ clean:
 
 increment:
 	./inc_bld_str.sh
+	
+open:
+	./openfiles.sh
+	

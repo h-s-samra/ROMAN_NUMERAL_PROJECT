@@ -24,3 +24,6 @@
 	- verified regex matches edge conditions for 'v' 'i' combinations and 'x' 'i' combinations
 	- verified regex matches edge conditions for 'iv' using edge conditions
 	- verified regex matches edge conditions for 'ix'
+
+-> 02/08/2017 (branch: feature_verify_input_string)
+	- verified regex matches edge conditions for 'xl'

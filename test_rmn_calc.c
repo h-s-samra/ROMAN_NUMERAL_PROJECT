@@ -322,8 +322,8 @@ void TEST_rmn_calc_test(void)
 	_regex_verifySubTrm_IX_fail("ixiv");
 	
 	_regex_verifySubTrm_XL_pass("xl");
+	_regex_verifySubTrm_XL_pass("xli");
 	_regex_verifySubTrm_XL_pass("xlix");
 	_regex_verifySubTrm_XL_pass("cxl");
 	_regex_verifySubTrm_XL_fail("xlx");
-	_regex_verifySubTrm_XL_fail("xli");
 }
