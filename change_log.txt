@@ -58,3 +58,6 @@
 -> 02/09/2017 (branch: feature_verify_input_string)
 	- added test for writing generated roman numerals to file after verification, and compare to master file to verify accuracy
 	
+-> 02/09/2017 (branch: feature_decode_roman_numeral_to_int)
+	- added new branch to add feature needed to decode roman numerals to integers
+	
