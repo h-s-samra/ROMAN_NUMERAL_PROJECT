@@ -16,6 +16,9 @@
 //							- added test for 'CM'
 //							- added test for 'M'
 //
+// 02/09/2017	HSamra	Adding tests for string decoding into integer
+//							- added test for 'I' to 1
+//
 // --------------------------------------------------------
 
 #include <assert.h>
@@ -32,7 +35,8 @@ void _encode_to_I(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -46,7 +50,8 @@ void _encode_to_IV(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -60,7 +65,8 @@ void _encode_to_V(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -74,7 +80,8 @@ void _encode_to_IX(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -88,7 +95,8 @@ void _encode_to_X(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -102,7 +110,8 @@ void _encode_to_XL(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -116,7 +125,8 @@ void _encode_to_L(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -130,7 +140,8 @@ void _encode_to_XC(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -144,7 +155,8 @@ void _encode_to_C(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -158,7 +170,8 @@ void _encode_to_CD(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -172,7 +185,8 @@ void _encode_to_D(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
 	
 	printf("PASS\r\n");
 }
@@ -186,8 +200,9 @@ void _encode_to_CM(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
-	
+
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
+
 	printf("PASS\r\n");
 }
 
@@ -200,7 +215,22 @@ void _encode_to_M(int n, char *str)
 	RMN_encode_int(n, bfr);
 	
 	assert(strcmp(bfr, str) == 0);
-	assert(RMN_verify_string(bfr) == 1);
+	
+	assert(RMN_verify_string(bfr) == 1); // verify output string is valid
+	
+	printf("PASS\r\n");
+}
+
+void _decode_to_1(int n, char *str)
+{
+	int num = 0;
+	printf("Test_decode_to_1(%s): ", str);
+	
+	assert(RMN_verify_string(str) == 1); // verify input string is valid
+	
+	RMN_decode_str(&num, str);
+
+	assert(num == n);
 	
 	printf("PASS\r\n");
 }
@@ -231,5 +261,7 @@ void TEST_rmn_calc_test_enc_dcd(void)
 	_encode_to_CM(999, "CMXCIX");
 	_encode_to_M(1000, "M");
 	_encode_to_M(1999, "MCMXCIX");
+	
+	_decode_to_1(1, "I");
 	
 }

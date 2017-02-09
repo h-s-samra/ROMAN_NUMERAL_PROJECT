@@ -133,3 +133,18 @@ void RMN_encode_int(int n, char *str)
 	}
 }
 
+int _decode_char(char chr)
+{
+	int num = 0;
+
+	switch(toupper(chr))
+	{
+		case 'I': num = 1; break;
+	}
+	return num;
+}
+
+void RMN_decode_str(int *n, char *str)
+{
+	*n = _decode_char(str[0]);
+}

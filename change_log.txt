@@ -60,4 +60,5 @@
 	
 -> 02/09/2017 (branch: feature_decode_roman_numeral_to_int)
 	- added new branch to add feature needed to decode roman numerals to integers
+	- verified decoding to 1 for 'I'
 	
