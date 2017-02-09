@@ -3,10 +3,10 @@
 // 02/04/2017	HSamra	Initial Commit
 // 02/06/2017	HSamra	Added functionality for displaying version number on startup
 // 02/06/2017	HSamra	Adding functionality for string verification testing
+// 02/08/2017	HSamra	Adding functionality for encoding integer to roman numerals
 //
 // -------------------------------------------------
 
-#include <string.h>
 #include "common.h"
 #include "test_rmn_calc.h"
 
@@ -19,6 +19,11 @@ char vrsn_bld[8];
 byte _read_buildNum(char *str)
 {
 	FILE *file = fopen(filename, "r");
+	
+	if(file == NULL)
+	{
+		printf("\r\nError: Failed to open %s", file);
+	}
 	
 	memset(vrsn_bld, 0x00, sizeof(vrsn_bld));
 	

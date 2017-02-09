@@ -52,3 +52,6 @@
 	- verified encoding to 'CM' for edge conditions 900 and 999
 	- verified encoding to 'M' for conditions of 1000 and 1999
 	
+-> 02/08/2017 (branch: feature_verify_input_string)
+	- in process of adding test to check file that the roman numerals are written to and compare it to a master file to verify accuracy
+	

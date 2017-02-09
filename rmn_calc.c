@@ -13,6 +13,11 @@ char rgx_str[] = {"^((m*)((cm?)|((cd?)|(d?)(c{0,3})))((xc?)|((xl?)|(l?)(x{0,3}))
 regex_t regex;
 byte rgxSts = 0;
 
+void RMN_bfr_init(char *str)
+{
+	memset(str, 0x00, sizeof(str));
+}
+
 int RMN_init(void)
 {
 	// compile regex

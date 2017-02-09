@@ -23,14 +23,9 @@
 
 char bfr[8];
 
-void _bfr_init(char *str)
-{
-	memset(bfr, 0x00, sizeof(bfr));
-}
-
 void _encode_to_I(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_I(%d): ", n);
 	
@@ -44,7 +39,7 @@ void _encode_to_I(int n, char *str)
 
 void _encode_to_IV(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_IV(%d): ", n);
 	
@@ -58,7 +53,7 @@ void _encode_to_IV(int n, char *str)
 
 void _encode_to_V(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_V(%d): ", n);
 	
@@ -72,7 +67,7 @@ void _encode_to_V(int n, char *str)
 
 void _encode_to_IX(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_IX(%d): ", n);
 	
@@ -86,7 +81,7 @@ void _encode_to_IX(int n, char *str)
 
 void _encode_to_X(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_X(%d): ", n);
 	
@@ -100,7 +95,7 @@ void _encode_to_X(int n, char *str)
 
 void _encode_to_XL(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_XL(%d): ", n);
 	
@@ -114,7 +109,7 @@ void _encode_to_XL(int n, char *str)
 
 void _encode_to_L(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_L(%d): ", n);
 	
@@ -128,7 +123,7 @@ void _encode_to_L(int n, char *str)
 
 void _encode_to_XC(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_XC(%d): ", n);
 	
@@ -142,7 +137,7 @@ void _encode_to_XC(int n, char *str)
 
 void _encode_to_C(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_C(%d): ", n);
 	
@@ -156,7 +151,7 @@ void _encode_to_C(int n, char *str)
 
 void _encode_to_CD(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_CD(%d): ", n);
 	
@@ -170,7 +165,7 @@ void _encode_to_CD(int n, char *str)
 
 void _encode_to_D(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_D(%d): ", n);
 	
@@ -184,7 +179,7 @@ void _encode_to_D(int n, char *str)
 
 void _encode_to_CM(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_CM(%d): ", n);
 	
@@ -198,7 +193,7 @@ void _encode_to_CM(int n, char *str)
 
 void _encode_to_M(int n, char *str)
 {
-	_bfr_init(bfr);
+	RMN_bfr_init(bfr);
 	
 	printf("Test_encode_to_M(%d): ", n);
 	

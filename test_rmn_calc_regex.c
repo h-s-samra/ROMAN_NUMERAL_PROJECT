@@ -18,6 +18,7 @@
 //							- added tests for cd
 //							- added tests for cm
 //							- renamed file from test_rmn_calc.c to test_rmn_calc_regex.c
+//							- in process of adding test to check file that the roman numerals are written to and compare it to a master file to verify accuracy
 //
 // --------------------------------------------------------
 
@@ -322,8 +323,42 @@ void _regex_verifySubTrm_CM_fail(char *str)
 	printf("PASS\r\n");
 }
 
+void _regex_verifyStr_pass(int n, char *str)
+{
+	printf("Test_regex_verifyStr_pass(%d -> %s): ", n, str);
+	
+	assert(RMN_verify_string(str) == 1);
+	
+	printf("PASS\r\n");
+}
+
+/*void _regex_verifyFile_pass(FILE *f1, FILE *f2)
+{
+	int fCheck1 = getc(f1); // testFile
+	int fCheck2 = getc(f2); // chckFile
+	
+	printf("Test_regex_verifyFile_pass(%d --- %d): ", fCheck1, fCheck2);
+	
+	while((fCheck1 != EOF) && (fCheck2 != EOF) && (fCheck1 == fCheck2))
+	{
+		fCheck1 = getc(f1);
+		fCheck2 = getc(f2);
+	}
+	printf("(%d --- %d)", fCheck1, fCheck2); // HSS_Debug
+	
+	assert(fCheck1 == fCheck2);
+	
+	printf("PASS\r\n");
+}*/
+
 void TEST_rmn_calc_test_regex(void)
 {
+	//FILE *file1;
+	//FILE *file2;
+	//const char testFile[] = "temp_test.txt";
+	//const char chckFile[] = "roman_numeral_test.txt";						 
+	//int i = 0;
+	
 	// test conditions for each character
 	_regex_verifyI_pass("I");
 	_regex_verifyI_pass("i");
@@ -349,7 +384,7 @@ void TEST_rmn_calc_test_regex(void)
 	_regex_verifyC_pass("c");
 	_regex_verifyC_pass("cc");
 	_regex_verifyC_pass("ccc");
-	_regex_verifyC_fail("cccc");
+	_regex_verifyC_fail("fnamecccc");
 	
 	_regex_verifyD_pass("D");
 	_regex_verifyD_pass("d");
@@ -358,7 +393,7 @@ void TEST_rmn_calc_test_regex(void)
 	_regex_verifyM_pass("M");
 	_regex_verifyM_pass("m");
 	_regex_verifyM_pass("mmmmmm");
-	
+
 	// testing edge conditions
 	_regex_verifyMulti_VI_pass("vi");
 	_regex_verifyMulti_VI_fail("viiii");
@@ -424,4 +459,41 @@ void TEST_rmn_calc_test_regex(void)
 	_regex_verifySubTrm_CM_fail("cmd");
 	_regex_verifySubTrm_CM_fail("cmcd");
 	
+	/*file1 = fopen(testFile, "a");
+	file2 = fopen(chckFile, "r");
+							 
+	if(file1 == NULL)
+	{
+		printf("\r\nError: Failed to create %s", testFile);
+	}
+	else if(file2 == NULL)
+	{
+		printf("\r\nError: Failed to create %s", chckFile);
+	}
+	
+	for(i = 1; i <= 1000; i++)
+	{
+		char bfr[16];
+		char bfr2[16];
+		
+		RMN_bfr_init(bfr);
+		RMN_bfr_init(bfr2);
+			
+		RMN_encode_int(i, bfr);
+		
+		_regex_verifyStr_pass(i, bfr);
+		
+		sprintf(bfr2, "%d=%s\n", i, bfr);
+		fputs(bfr2, file1);
+	}
+
+	_regex_verifyFile_pass(file1, file2);
+
+	fclose(file1);
+	fclose(file2);
+							 
+	if(remove(testFile) == 0)
+	{
+		printf("\r\n%s deleted\r\n", testFile);
+	}*/
 }
