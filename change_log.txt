@@ -44,4 +44,5 @@
 	- verified encoding to 'IX' for 9
 	- verified encoding to 'X' for edge conditions 10 and 39
 	- verified encoding to 'XL' for edge conditions 40 and 49
+	- verified encoding to 'L' for edge conditions 50 and 89
 	
