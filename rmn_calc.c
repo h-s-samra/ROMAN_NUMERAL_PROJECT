@@ -55,7 +55,12 @@ void RMN_encode_int(int n, char *str)
 {
 	while(n > 0)
 	{
-		if(n == 4)
+		if(n <= 8 && n >= 5)
+		{
+			strcat(str, "V");
+			n -= 5;
+		}
+		else if(n == 4)
 		{
 			strcat(str, "IV");
 			n -= 4;

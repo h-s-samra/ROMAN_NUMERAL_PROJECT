@@ -40,3 +40,4 @@
 	- added test_rmn_calc_enc_dcd.c to project for encoding and decoding roman numeral strings
 	- verified encoding to 'I' for edge conditions 1 and 3
 	- verified encoding to 'IV' for 4
+	- verified encoding to 'V' for edge conditions 5 and 8
