@@ -22,7 +22,7 @@ byte _read_buildNum(char *str)
 	
 	if(file == NULL)
 	{
-		printf("\r\nError: Failed to open %s", file);
+		printf("\r\nError: Failed to open %s", filename);
 	}
 	
 	memset(vrsn_bld, 0x00, sizeof(vrsn_bld));
@@ -56,6 +56,8 @@ int main(void)
 	TEST_rmn_calc_test_regex();
 	printf("\r\n");
 	TEST_rmn_calc_test_enc_dcd();
+	
+	
 	printf("Version: v%d.%d%c.%s\r\n\n", vrsn_mjr, vrsn_mnr, vrsn_rls, vrsn_bld); // HSS_Debug: for displaying version number at bottom of test
 #else
 	

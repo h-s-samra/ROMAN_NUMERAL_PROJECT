@@ -19,11 +19,16 @@
 //							- added tests for cm
 //							- renamed file from test_rmn_calc.c to test_rmn_calc_regex.c
 //							- in process of adding test to check file that the roman numerals are written to and compare it to a master file to verify accuracy
+// 02/08/2017	HSamra	Adding tests for regex comparisons
+//							- added test for writing generated roman numerals to file after verification, and compare to master file to verify accuracy
 //
 // --------------------------------------------------------
 
 #include <assert.h>
 #include "common.h"
+
+const char testFile[] = "temp_test.txt";
+const char chckFile[] = "roman_numeral_test.txt";
 
 void _regex_verifyI_pass(char *str)
 {
@@ -332,32 +337,34 @@ void _regex_verifyStr_pass(int n, char *str)
 	printf("PASS\r\n");
 }
 
-/*void _regex_verifyFile_pass(FILE *f1, FILE *f2)
+void _regex_verifyFile_pass(void)
 {
+	FILE *f1 = fopen(testFile, "r");
+	FILE *f2 = fopen(chckFile, "r");
+	
 	int fCheck1 = getc(f1); // testFile
 	int fCheck2 = getc(f2); // chckFile
 	
-	printf("Test_regex_verifyFile_pass(%d --- %d): ", fCheck1, fCheck2);
+	printf("Test_regex_verifyFile_pass: ");
 	
 	while((fCheck1 != EOF) && (fCheck2 != EOF) && (fCheck1 == fCheck2))
 	{
 		fCheck1 = getc(f1);
 		fCheck2 = getc(f2);
 	}
-	printf("(%d --- %d)", fCheck1, fCheck2); // HSS_Debug
+	
+	fclose(f1);
+	fclose(f2);
 	
 	assert(fCheck1 == fCheck2);
 	
 	printf("PASS\r\n");
-}*/
+}
 
 void TEST_rmn_calc_test_regex(void)
 {
-	//FILE *file1;
-	//FILE *file2;
-	//const char testFile[] = "temp_test.txt";
-	//const char chckFile[] = "roman_numeral_test.txt";						 
-	//int i = 0;
+	FILE *file1 = NULL;						 
+	int i = 0;
 	
 	// test conditions for each character
 	_regex_verifyI_pass("I");
@@ -459,16 +466,12 @@ void TEST_rmn_calc_test_regex(void)
 	_regex_verifySubTrm_CM_fail("cmd");
 	_regex_verifySubTrm_CM_fail("cmcd");
 	
-	/*file1 = fopen(testFile, "a");
-	file2 = fopen(chckFile, "r");
+	// write generated roman numerals to a file and compare to a verified file to ensure roman numerals are generated correctly
+	file1 = fopen(testFile, "a");
 							 
 	if(file1 == NULL)
 	{
 		printf("\r\nError: Failed to create %s", testFile);
-	}
-	else if(file2 == NULL)
-	{
-		printf("\r\nError: Failed to create %s", chckFile);
 	}
 	
 	for(i = 1; i <= 1000; i++)
@@ -487,13 +490,12 @@ void TEST_rmn_calc_test_regex(void)
 		fputs(bfr2, file1);
 	}
 
-	_regex_verifyFile_pass(file1, file2);
-
 	fclose(file1);
-	fclose(file2);
-							 
+	
+	_regex_verifyFile_pass();
+						 
 	if(remove(testFile) == 0)
 	{
 		printf("\r\n%s deleted\r\n", testFile);
-	}*/
+	}
 }
