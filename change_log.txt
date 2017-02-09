@@ -54,4 +54,7 @@
 	
 -> 02/08/2017 (branch: feature_verify_input_string)
 	- in process of adding test to check file that the roman numerals are written to and compare it to a master file to verify accuracy
+
+-> 02/09/2017 (branch: feature_verify_input_string)
+	- added test for writing generated roman numerals to file after verification, and compare to master file to verify accuracy
 	
