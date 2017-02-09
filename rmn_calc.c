@@ -55,10 +55,20 @@ void RMN_encode_int(int n, char *str)
 {
 	while(n > 0)
 	{
-		if(n <= 3)
+		if(n == 4)
+		{
+			strcat(str, "IV");
+			n -= 4;
+		}
+		else if(n <= 3)
 		{
 			strcat(str, "I");
 			n -= 1;
+		}
+		else
+		{
+			printf("\r\n<ERR: RMN_encode_int>\r\n");
+			return;
 		}
 	}
 }
