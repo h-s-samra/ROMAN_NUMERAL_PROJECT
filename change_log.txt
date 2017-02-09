@@ -42,3 +42,5 @@
 	- verified encoding to 'IV' for 4
 	- verified encoding to 'V' for edge conditions 5 and 8
 	- verified encoding to 'IX' for 9
+	- verified encoding to 'X' for edge conditions 10 and 39
+	
