@@ -1,9 +1,10 @@
-// --------------- test_rmn_calc.c Log --------------------
+// --------------- test_rmn_calc_regex.c Log --------------------
 //
 // 02/06/2017	HSamra	Initial Commit
 // 02/06/2017	HSamra	Adding tests for regex comparisons
 //							- added tests for i and I (min: 0, max: 3)
 //							- added tests for v and V (min: 0, max: 1)
+// 02/07/2017	HSamra	Adding tests for regex comparisions
 //							- added tests for x and X (min: 0, max: 3)
 //							- added tests for l and L (min: 0, max: 1)
 //							- added tests for c and C (min: 0, max: 3)
@@ -11,10 +12,12 @@
 //							- added tests for m and M (min: 0, max: 3)
 //							- added tests for iv
 //							- added tests for ix
+// 02/08/2017	HSamra	Adding tests for regex comparisons
 //							- added tests for xl
 //							- added tests for xc
 //							- added tests for cd
 //							- added tests for cm
+//							- renamed file from test_rmn_calc.c to test_rmn_calc_regex.c
 //
 // --------------------------------------------------------
 
@@ -319,7 +322,7 @@ void _regex_verifySubTrm_CM_fail(char *str)
 	printf("PASS\r\n");
 }
 
-void TEST_rmn_calc_test(void)
+void TEST_rmn_calc_test_regex(void)
 {
 	// test conditions for each character
 	_regex_verifyI_pass("I");

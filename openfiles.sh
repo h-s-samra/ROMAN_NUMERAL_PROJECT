@@ -8,6 +8,8 @@ xdg-open rmn_calc.h
 sleep .5
 xdg-open test_rmn_calc_regex.c
 sleep .5
+xdg-open test_rmn_calc_enc_dcd.c
+sleep .5
 xdg-open test_rmn_calc.h
 sleep .5
 xdg-open common.h

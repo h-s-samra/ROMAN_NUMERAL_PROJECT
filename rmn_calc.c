@@ -6,8 +6,6 @@
 // ---------------------------------------------------
 
 #include <regex.h>
-#include <string.h>
-#include <ctype.h>
 #include "common.h"
 
 char rgx_str[] = {"^((m*)((cm?)|((cd?)|(d?)(c{0,3})))((xc?)|((xl?)|(l?)(x{0,3})))((ix?)|((iv?)|(v?)(i{0,3}))))$"};
@@ -52,3 +50,16 @@ int RMN_verify_string(char *str)
 	}
 	return 0;	
 }
+
+void RMN_encode_int(int n, char *str)
+{
+	while(n > 0)
+	{
+		if(n <= 3)
+		{
+			strcat(str, "I");
+			n -= 1;
+		}
+	}
+}
+

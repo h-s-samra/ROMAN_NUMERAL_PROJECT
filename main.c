@@ -48,7 +48,9 @@ int main(void)
 	}
 	
 #ifdef RMN_CALC_TEST
-	TEST_rmn_calc_test();
+	TEST_rmn_calc_test_regex();
+	printf("\r\n");
+	TEST_rmn_calc_test_enc_dcd();
 #else
 	
 #endif // RMN_CALC_TEST
