@@ -6,7 +6,7 @@ xdg-open rmn_calc.c
 sleep .5
 xdg-open rmn_calc.h
 sleep .5
-xdg-open test_rmn_calc.c
+xdg-open test_rmn_calc_regex.c
 sleep .5
 xdg-open test_rmn_calc.h
 sleep .5

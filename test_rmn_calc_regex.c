@@ -4,7 +4,17 @@
 // 02/06/2017	HSamra	Adding tests for regex comparisons
 //							- added tests for i and I (min: 0, max: 3)
 //							- added tests for v and V (min: 0, max: 1)
-//							- added tests for vi
+//							- added tests for x and X (min: 0, max: 3)
+//							- added tests for l and L (min: 0, max: 1)
+//							- added tests for c and C (min: 0, max: 3)
+//							- added tests for d and D (min: 0, max: 1)
+//							- added tests for m and M (min: 0, max: 3)
+//							- added tests for iv
+//							- added tests for ix
+//							- added tests for xl
+//							- added tests for xc
+//							- added tests for cd
+//							- added tests for cm
 //
 // --------------------------------------------------------
 
