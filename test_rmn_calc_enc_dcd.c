@@ -5,6 +5,7 @@
 //							- added test for 'I'
 //							- added test for 'IV'
 //							- added test for 'V'
+//							- added test for 'IX'
 //
 // --------------------------------------------------------
 
@@ -57,6 +58,19 @@ void _encode_to_V(int n, char *str)
 	printf("PASS\r\n");
 }
 
+void _encode_to_IX(int n, char *str)
+{
+	_bfr_init(bfr);
+	
+	printf("Test_encode_to_V(%d): ", n);
+	
+	RMN_encode_int(n, bfr);
+	
+	assert(strcmp(bfr, str) == 0);
+	
+	printf("PASS\r\n");
+}
+
 void TEST_rmn_calc_test_enc_dcd(void)
 {
 	_encode_to_I(1, "I");
@@ -64,5 +78,6 @@ void TEST_rmn_calc_test_enc_dcd(void)
 	_encode_to_IV(4, "IV");
 	_encode_to_V(5, "V");
 	_encode_to_V(8, "VIII");
+	_encode_to_IX(9, "IX");
 	
 }
