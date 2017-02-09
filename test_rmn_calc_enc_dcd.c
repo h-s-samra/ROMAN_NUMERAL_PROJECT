@@ -7,6 +7,7 @@
 //							- added test for 'V'
 //							- added test for 'IX'
 //							- added test for 'X'
+//							- added test for 'XL'
 //
 // --------------------------------------------------------
 
@@ -90,6 +91,20 @@ void _encode_to_X(int n, char *str)
 	printf("PASS\r\n");
 }
 
+void _encode_to_XL(int n, char *str)
+{
+	_bfr_init(bfr);
+	
+	printf("Test_encode_to_XL(%d): ", n);
+	
+	RMN_encode_int(n, bfr);
+	
+	assert(strcmp(bfr, str) == 0);
+	assert(RMN_verify_string(bfr) == 1);
+	
+	printf("PASS\r\n");
+}
+
 void TEST_rmn_calc_test_enc_dcd(void)
 {
 	_encode_to_I(1, "I");
@@ -100,5 +115,7 @@ void TEST_rmn_calc_test_enc_dcd(void)
 	_encode_to_IX(9, "IX");
 	_encode_to_X(10, "X");
 	_encode_to_X(39, "XXXIX");
+	_encode_to_XL(40, "XL");
+	_encode_to_XL(49, "XLIX");
 	
 }
