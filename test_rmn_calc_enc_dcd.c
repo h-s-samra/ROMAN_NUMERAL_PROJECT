@@ -12,6 +12,7 @@
 //							- added test for 'XC'
 //							- added test for 'C'
 //							- added test for 'CD'
+//							- added test for 'D'
 //
 // --------------------------------------------------------
 
@@ -165,6 +166,20 @@ void _encode_to_CD(int n, char *str)
 	printf("PASS\r\n");
 }
 
+void _encode_to_D(int n, char *str)
+{
+	_bfr_init(bfr);
+	
+	printf("Test_encode_to_D(%d): ", n);
+	
+	RMN_encode_int(n, bfr);
+	
+	assert(strcmp(bfr, str) == 0);
+	assert(RMN_verify_string(bfr) == 1);
+	
+	printf("PASS\r\n");
+}
+
 void TEST_rmn_calc_test_enc_dcd(void)
 {
 	_encode_to_I(1, "I");
@@ -185,5 +200,6 @@ void TEST_rmn_calc_test_enc_dcd(void)
 	_encode_to_C(399, "CCCXCIX");
 	_encode_to_CD(400, "CD");
 	_encode_to_CD(499, "CDXCIX");
-	
+	_encode_to_D(500, "D");
+	_encode_to_D(899, "DCCCXCIX");
 }
