@@ -46,4 +46,5 @@
 	- verified encoding to 'XL' for edge conditions 40 and 49
 	- verified encoding to 'L' for edge conditions 50 and 89
 	- verified encoding to 'XC' for edge conditions 90 and 99
+	- verified encoding to 'C' for edge conditions 100 and 399
 	
