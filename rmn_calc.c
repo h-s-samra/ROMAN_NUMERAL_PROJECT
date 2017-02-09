@@ -55,7 +55,12 @@ void RMN_encode_int(int n, char *str)
 {
 	while(n > 0)
 	{
-		if(n < 1000 && n >= 900)
+		if(n >= 1000)
+		{
+			strcat(str, "M");
+			n -= 1000;
+		}
+		else if(n < 1000 && n >= 900)
 		{
 			strcat(str, "CM");
 			n -= 900;

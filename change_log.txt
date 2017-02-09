@@ -49,4 +49,6 @@
 	- verified encoding to 'C' for edge conditions 100 and 399
 	- verified encoding to 'CD' for edge conditions 400 and 499
 	- verified encoding to 'D' for edge conditions 500 and 899
+	- verified encoding to 'CM' for edge conditions 900 and 999
+	- verified encoding to 'M' for conditions of 1000 and 1999
 	
